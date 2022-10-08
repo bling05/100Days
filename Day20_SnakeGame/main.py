@@ -17,8 +17,8 @@ def restart(snake, food, scoreboard):
     scoreboard.reset()
     scoreboard.hideturtle()
 
-ingame = True
-while ingame:
+on = True
+while on:
     screen = turtle.Screen()
     screen.setup(WIDTH, HEIGHT)
     screen.bgcolor("black")
@@ -30,13 +30,13 @@ while ingame:
     board = scoreboard.Scoreboard()
 
     screen.listen()
-    screen.onkey(snek.up, "w")
-    screen.onkey(snek.left, "a")
-    screen.onkey(snek.down, "s")
-    screen.onkey(snek.right, "d")
+    screen.onkeypress(snek.up, "w")
+    screen.onkeypress(snek.left, "a")
+    screen.onkeypress(snek.down, "s")
+    screen.onkeypress(snek.right, "d")
 
-    on = True
-    while on:
+    alive = True
+    while alive:
         screen.update()
         time.sleep(0.1)
         snek.move()
